@@ -73,7 +73,12 @@ CONSTRAINT c_chk_country CHECK(country in ('India', 'Nepal'))
  
  SELECT * FROM emp;
 
-INSERT INTO `dbcollage`.`emp` (`id`, `name`, `occupation`, `age`) VALUES ('3', 'keshav', 'ec', '32');
+INSERT INTO `dbcollage`.`emp` (`id`, `name`, `occupation`, `age`) VALUES ('1', 'keshav', 'ec', '32');
+INSERT INTO `dbcollage`.`emp` (`id`, `name`, `occupation`, `age`) VALUES ('2', 'pradeep', 'it', '25');
+INSERT INTO `dbcollage`.`emp` (`id`, `name`, `occupation`, `age`) VALUES ('3', 'maurya', 'me', '42');
+INSERT INTO `dbcollage`.`emp` (`id`, `name`, `occupation`, `age`) VALUES ('4', 'kokila', 'bio', '28');
+INSERT INTO `dbcollage`.`emp` (`id`, `name`, `occupation`, `age`) VALUES ('5', 'ram', 'law', '66');
+INSERT INTO `dbcollage`.`emp` (`id`, `name`, `occupation`, `age`) VALUES ('6', 'mohan', 'ki', '40');
 
 
 desc dbcollage.emp;
@@ -83,6 +88,22 @@ SELECT * FROM emp;
 update emp set age = 45;
 update emp set age = 25 where name='pradeep';
 update emp set name = 'kokila' where name='keshav';
+
+-- delete all row
+delete from emp;
+
+-- delete all row
+delete from emp where age =25;
+
+-- display only 2
+SELECT * FROM emp LIMIT 2;
+-- display afer 2nd row
+SELECT * FROM emp LIMIT 2, 2;
+
+-- display the employee detail in the ascending order of their age
+SELECT * FROM emp ORDER BY age ASC;
+SELECT * FROM emp ORDER BY age desc;
+SELECT * FROM emp ORDER BY age desc , name asc;
  
  
  
