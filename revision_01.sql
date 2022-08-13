@@ -71,8 +71,18 @@ CONSTRAINT c_chk_country CHECK(country in ('India', 'Nepal'))
  alter table student add CONSTRAINT cstn_primary_key_student primary key (roll_no);
  alter table student add CONSTRAINT cstn_check_student check(roll_no > 100);
  
- 
- 
+ SELECT * FROM emp;
+
+INSERT INTO `dbcollage`.`emp` (`id`, `name`, `occupation`, `age`) VALUES ('3', 'keshav', 'ec', '32');
+
+
+desc dbcollage.emp;
+
+SELECT * FROM emp;
+
+update emp set age = 45;
+update emp set age = 25 where name='pradeep';
+update emp set name = 'kokila' where name='keshav';
  
  
  
