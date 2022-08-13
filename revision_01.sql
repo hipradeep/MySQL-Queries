@@ -67,3 +67,12 @@ country VARCHAR(25),
 CONSTRAINT c_chk_country CHECK(country in ('India', 'Nepal'))
 );
  
+ alter table student add CONSTRAINT cstn_unique_student UNIQUE (roll_no);
+ alter table student add CONSTRAINT cstn_primary_key_student primary key (roll_no);
+ alter table student add CONSTRAINT cstn_check_student check(roll_no > 100);
+ 
+ 
+ 
+ 
+ 
+ 
