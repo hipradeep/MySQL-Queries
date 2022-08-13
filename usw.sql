@@ -1,4 +1,29 @@
 
+
+use org1;
+
+select * from empnew;
+select * from newtable;
+select * from accountnew;
+select * from employeenew;
+drop table accountnew;
+drop table employeenew;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 create database LMS;
 use LMS;
 
