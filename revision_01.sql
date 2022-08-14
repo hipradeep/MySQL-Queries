@@ -79,6 +79,7 @@ INSERT INTO `dbcollage`.`emp` (`id`, `name`, `occupation`, `age`) VALUES ('3', '
 INSERT INTO `dbcollage`.`emp` (`id`, `name`, `occupation`, `age`) VALUES ('4', 'kokila', 'bio', '28');
 INSERT INTO `dbcollage`.`emp` (`id`, `name`, `occupation`, `age`) VALUES ('5', 'ram', 'law', '66');
 INSERT INTO `dbcollage`.`emp` (`id`, `name`, `occupation`, `age`) VALUES ('6', 'mohan', 'ki', '40');
+INSERT INTO `dbcollage`.`emp` (`id`, `name`, `occupation`, `age`) VALUES ('7', 'kushal', 'ki', '40');
 
 
 desc dbcollage.emp;
@@ -104,6 +105,47 @@ SELECT * FROM emp LIMIT 2, 2;
 SELECT * FROM emp ORDER BY age ASC;
 SELECT * FROM emp ORDER BY age desc;
 SELECT * FROM emp ORDER BY age desc , name asc;
+SELECT * FROM emp ORDER BY  name asc, age asc ;
+
+SELECT * FROM emp ORDER BY age desc LIMIT 3;
+
+alter table emp RENAME column occupation to occ;
+
+SELECT  occ  from emp;
+
+SELECT DISTINCT occ  from emp;
+
+SELECT  age, age+2  from emp;
+SELECT DISTINCT  age, age+2 as m_age  from emp;
+SELECT  age, age+2 as m_age  from emp;
+
+
+SELECT  age  from emp where age > 40;
+SELECT  age  from emp where age = 40;
+SELECT  age  from emp where age < 40;
+SELECT  age  from emp where age <= 40;
+SELECT  age  from emp where age is not null;
+SELECT  age  from emp where age is null;
+SELECT  age  from emp where age > 30 and age < 40;
+SELECT  age  from emp where age BETWEEN 32 and 40;
+SELECT  age  from emp where age not BETWEEN 32 and 40;
+
+SELECT  name, age  from emp where age > 30 or age < 40;
+SELECT  age  from emp where age in (30,40,28,50);
+SELECT  age  from emp where age not in (30,40,28,50);
+
+SELECT name from emp WHERE name like 'k%';
+SELECT name from emp WHERE name like '%l';
+SELECT name from emp WHERE name like 'k%';
+SELECT name from emp WHERE name like '%h%';
+SELECT name from emp WHERE name not like '%h%';
+SELECT name from emp WHERE name like '%h%' and name like 'p%';
+SELECT name from emp WHERE name like '%h%' or name like 'p%';
+
+
+
+
+
  
  
  
