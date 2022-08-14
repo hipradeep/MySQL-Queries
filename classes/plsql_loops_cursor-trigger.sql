@@ -1,4 +1,10 @@
 -- if else 3 update the 
+/*Q1 user will inout a no. check the no is even or odd
+Q2 user will enter the eid,update his salary according the following criteria
+<1000 30% hike
+1001 to 2000 20%hike
+>2000 then 10% hike
+*/
 delimiter $$
  create procedure updateempsal(in empno1 int)
  begin 
@@ -6,27 +12,38 @@ delimiter $$
  declare sal1 int;
  
  select sal into sal1 from emp where empno=empno1;
- select 'original salary of', empno1,sal1;
+ select 'original salary of', empno1, sal1;
  
   if sal1<1000 then 
   set newsal=sal1*0.3;
 	update emp set sal=sal1+newsal where empno=empno1;
-    commit;
+    commit; /* makes permanent any changes made to the database during the current transaction*/
  elseif sal1 between 1001 and 2000  then
  set newsal=sal1*0.2;
  update emp set sal=sal1+newsal where empno=empno1;
-    
 else 
     set newsal=sal1*0.1;
 	update emp set sal=sal1+newsal where empno=empno1;
-    
   end if;  
+  
  end $$
  
- 
+ call updateempsal(103);
  
  select * from emp;
  
+ -- switch case --> case
+ case var
+ when 'value' then
+	action
+ when 'value' then
+	action
+ when 'value' then
+	action
+else
+	action
+end case;
+    
  
  -- switch case example
  DELIMITER $$

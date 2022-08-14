@@ -103,3 +103,28 @@ order by count(*) desc limit 3
 
 select * from emp;
 update emp set occ='it' where id=3;
+
+delimiter $$
+create procedure updateAge(in uId int)
+begin
+declare oldAge int;
+declare incAge int;
+
+ select age into oldAge from emp where id=uId;
+ select 'Old Age of user ', uId, oldAge;
+ 
+ if oldAge> 60 then
+  set incAge=oldAge+5;
+update emp set age=incAge where id=uId;
+ elseif oldAge between 40 and 60  then
+  set incAge=oldAge+10;
+update emp set age=incAge where id=uId;
+else
+ set incAge=oldAge+15;
+update emp set age=incAge where id=uId;
+end if;  
+end $$
+ 
+ call updateAge(1);
+ 
+ select * from emp;

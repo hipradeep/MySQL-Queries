@@ -168,10 +168,11 @@ limit 3;
 
 -- inout parameter
 -- combination if in and out parameter
+
 delimiter //
 create procedure inout1(inout msg varchar(100))
 begin
-set msg=concat(@msg,"welcome to cdac");
+set msg=concat(@msg," welcome to cdac");
 end//
 
 set @msg = 'gourav';
@@ -193,9 +194,6 @@ create procedure inout2(inout x int,in y int)
 begin
 set x=x+y;
 end//
-
-
-
 
 set @x=1;
 call inout2(@x,200)
@@ -234,12 +232,5 @@ select hire_date into d2 from employees where employee_id=eid2;
 select d1,d2;
 end//
 
-/*Q1 user will inout a no. check the no is even or odd
-Q2 user will enter the eid,update his salary according the following criteria
-<5000 30% hike
-5001 to 10000 20%hike
->10001 then 10% hike
-
-*/
 
 call compare_date(100,105);
