@@ -31,9 +31,6 @@ desc books;
 select * from books;
 
 
-
-
-
 select * from std;
 
 create table books(
@@ -90,8 +87,5 @@ desc student;
 select * from employeelogin;
 
 DELETE FROM student WHERE name = "pradeep2";
-
-
-
 
 
