@@ -13,17 +13,6 @@ drop table employeenew;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 create database LMS;
 use LMS;
 
