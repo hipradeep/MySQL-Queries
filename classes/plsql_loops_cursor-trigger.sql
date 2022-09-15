@@ -357,6 +357,7 @@ trigger_body;
 use hrms;
 -- Example 1 on before insert.
  drop table contacts;
+ 
 CREATE TABLE contacts
 ( contact_id INT(11) NOT NULL AUTO_INCREMENT,
   last_name VARCHAR(30) NOT NULL,
@@ -447,6 +448,7 @@ END//
 
 insert into contacts1 values(101,"qw","qd",'2019-08-06');
 insert into contacts1 values(109,"adv","qd",'2019-08-06');
+
 select * from contact_audit;
 
 -- before update
@@ -504,6 +506,7 @@ DELIMITER ;
 If you update the value in the quantity column to a new value that is 3 times greater than the current value, the trigger raises an error and stops the update.*/
 
 select * from sales;
+
 update  sales set quantity=200 where id=1;
 
 update  sales set quantity=2000 where id=1;
@@ -653,6 +656,7 @@ delimiter //
 CREATE TRIGGER after_salaries_delete
 AFTER DELETE
 ON Salaries FOR EACH ROW
+BEGIN
 UPDATE SalaryBudgets 
 SET total = total - old.salary;
 end//
