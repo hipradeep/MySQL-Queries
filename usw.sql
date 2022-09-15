@@ -13,17 +13,6 @@ drop table employeenew;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 create database LMS;
 use LMS;
 
@@ -40,9 +29,6 @@ ALTER TABLE books MODIFY  COLUMN price DECIMAL(10,2);
 desc books;
 
 select * from books;
-
-
-
 
 
 select * from std;
@@ -101,8 +87,5 @@ desc student;
 select * from employeelogin;
 
 DELETE FROM student WHERE name = "pradeep2";
-
-
-
 
 
